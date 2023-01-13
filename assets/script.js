@@ -93,7 +93,15 @@ function getPasswordOptions() {
   var charNum = prompt("How many characters would you like your password to contain?");
 
   // At least 8 characters but no more than 128.
-  if (parseInt(charNum) > 8 && parseInt(charNum) <= 128) {
+  if (parseInt(charNum) > 8 && parseInt(charNum) < 129) {
+
+    // Character types options
+    var speChar = confirm("Click OK to confirm including special characters.");
+    var numChar = confirm("Click OK to confirm including numeric characters.");
+    var lowChar = confirm("Click OK to confirm including lowercase characters.");
+    var upperChar = confirm("Click OK to confirm including uppercase characters.");
+    var options = [speChar, numChar, lowChar, upperChar];
+    return options;
 
   }
     
@@ -102,15 +110,15 @@ function getPasswordOptions() {
       alert("Password length must be at least 8 characters!")
     }
     else if (parseInt(charNum) > 128) {
-      alert("Password length must be no more than 128 characters!")
+      alert("Password length must be no more than 129 characters!")
     }
+    // For all other incorrect inputs
     else {
-      alert("Please enter a number between 8 and 128 (included).")
+      alert("Please enter a number between 8 and 129 (included).")
     }
   }
 }
 
-//TODO: add corner cases
 
 getPasswordOptions();
 
