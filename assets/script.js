@@ -92,14 +92,25 @@ var upperCasedCharacters = [
 function getPasswordOptions() {
   var charNum = prompt("How many characters would you like your password to contain?");
 
-  if (parseInt(charNum) < 8 ) {
-    alert("Password length must be at least 8 characters!")
+  // At least 8 characters but no more than 128.
+  if (parseInt(charNum) > 8 && parseInt(charNum) <= 128) {
 
   }
-  else if (parseInt(charNum) > 128) {
-    alert("Password length must be no more than 128 characters!")
+    
+  else {
+    if (parseInt(charNum) < 8) {
+      alert("Password length must be at least 8 characters!")
+    }
+    else if (parseInt(charNum) > 128) {
+      alert("Password length must be no more than 128 characters!")
+    }
+    else {
+      alert("Please enter a number between 8 and 128 (included).")
+    }
   }
 }
+
+//TODO: add corner cases
 
 getPasswordOptions();
 
