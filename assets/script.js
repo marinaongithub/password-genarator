@@ -103,7 +103,7 @@ function getPasswordOptions() {
     
     // Validate for each input and at least one character type should be selected
     if (!speChar && !numChar && !lowChar && !upperChar) {
-      alert("Select at least one the character options!");
+      alert("Select at least one of the character options!");
       return;
     }
     
