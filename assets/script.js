@@ -100,6 +100,14 @@ function getPasswordOptions() {
     var numChar = confirm("Click OK to confirm including numeric characters.");
     var lowChar = confirm("Click OK to confirm including lowercase characters.");
     var upperChar = confirm("Click OK to confirm including uppercase characters.");
+    
+    // Validate for each input and at least one character type should be selected
+    if (!speChar && !numChar && !lowChar && !upperChar) {
+      alert("Select at least one the character options!");
+      return;
+    }
+    
+    // Character options object
     var options = {
       charNum : charNum,
       speChar : speChar,
@@ -108,7 +116,6 @@ function getPasswordOptions() {
       upperChar : upperChar,
     }
     return options;
-
   }
     
   else {
@@ -125,8 +132,8 @@ function getPasswordOptions() {
   }
 }
 
+// Stores the returned Character Options object
 var options = getPasswordOptions();
-console.log(options);
 
 // Function for getting a random element from an array
 function getRandom(arr) {
