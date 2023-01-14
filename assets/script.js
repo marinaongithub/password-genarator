@@ -100,7 +100,13 @@ function getPasswordOptions() {
     var numChar = confirm("Click OK to confirm including numeric characters.");
     var lowChar = confirm("Click OK to confirm including lowercase characters.");
     var upperChar = confirm("Click OK to confirm including uppercase characters.");
-    var options = [speChar, numChar, lowChar, upperChar];
+    var options = {
+      charNum : charNum,
+      speChar : speChar,
+      numChar : numChar,
+      lowChar : lowChar,
+      upperChar : upperChar,
+    }
     return options;
 
   }
@@ -119,17 +125,39 @@ function getPasswordOptions() {
   }
 }
 
-
-getPasswordOptions();
+var options = getPasswordOptions();
+console.log(options);
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  return Math.floor(Math.random() * arr.length);
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  var randomPassword = "";
+  charOptions = [];
 
+  if (options.speChar) {
+    charOptions = charOptions.concat(specialCharacters);
+  }
+  if (options.numChar) {
+    charOptions = charOptions.concat(numericCharacters);
+  }
+
+  if (options.lowChar) {
+    charOptions = charOptions.concat(lowerCasedCharacters);
+  }
+
+  if (options.upperChar) {
+    charOptions = charOptions.concat(upperCasedCharacters);
+  }
+
+  while (randomPassword.length < options.charNum) {
+    randomPassword = randomPassword + charOptions[getRandom(charOptions)];
+  }
+  
+  return randomPassword
 }
 
 // Get references to the #generate element
