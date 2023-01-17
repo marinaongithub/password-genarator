@@ -132,9 +132,6 @@ function getPasswordOptions() {
   }
 }
 
-// Stores the returned Character Options object
-var options = getPasswordOptions();
-
 // Function for getting a random element from an array
 function getRandom(arr) {
   return Math.floor(Math.random() * arr.length);
@@ -143,7 +140,10 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   var randomPassword = "";
-  charOptions = [];
+  var charOptions = [];
+
+  // Stores the returned Character Options object
+  var options = getPasswordOptions();
 
   if (options.speChar) {
     charOptions = charOptions.concat(specialCharacters);
