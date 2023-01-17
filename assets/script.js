@@ -123,11 +123,11 @@ function getPasswordOptions() {
       alert("Password length must be at least 8 characters!")
     }
     else if (parseInt(charNum) > 128) {
-      alert("Password length must be no more than 129 characters!")
+      alert("Password length must be no more than 128 characters!")
     }
     // For all other incorrect inputs
     else {
-      alert("Please enter a number between 8 and 129 (included).")
+      alert("Please enter a number between 8 and 128 (included).")
     }
   }
 }
