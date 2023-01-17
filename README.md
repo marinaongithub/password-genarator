@@ -17,13 +17,13 @@ N/A
 Access the Password Generator at the link below:
 https://marinaongithub.github.io/password-generator
 
-Choose the length and the type of characher you want to include in the password.
-
-![alt text](assets/screenshot-confirm.png)
-
 Click on the red button to generate the random password.
 
 ![alt text](assets/screenshot-generator.png)
+
+Choose the length and the type of characher you want to include in the password.
+
+![alt text](assets/screenshot-confirm.png)
 
 
 ## Credits
